@@ -1,0 +1,61 @@
+
+
+IF  condition THEN
+    action
+
+Algorithm to determine if a child should use a car/booster seat
+
+GET age
+IF age < 8 THEN
+    DISPLAY Use a booster seat
+ELSE
+    DISPLAY No special seat required!
+END IF
+DISPLAY Thanks for asking
+
+
+GET age
+GET height
+IF age < 8 THEN
+    DISPLAY Use a booster seat
+ELSE
+    IF height < 57 THEN
+        DISPLAY Use a booster seat
+    ELSE
+         DISPLAY No special seat required!
+    END IF
+END IF
+DISPLAY Thanks for asking
+
+
+GET age
+GET height
+IF age < 8 OR height < 57 THEN
+	IF weight < 40 THEN
+		IF weight >= 20 AND age >= 1 THEN 
+			DISPLAY Use a front-facing car seat
+		ELSE
+			DISPLAY Use a rear-facing car seat
+		END IF
+	ELSE    
+		DISPLAY Use a booster seat
+	END IF
+ELSE
+   DISPLAY No special seat required!
+END IF
+DISPLAY Thanks for asking
+
+GET age
+GET height
+GET weight
+IF age >= 8 AND height >= 57 THEN
+   	DISPLAY No special seat required!
+ELSE IF weight >= 40 THEN
+	DISPLAY Use a booster seat
+ELSE IF weight >= 20 AND age >= 1 THEN 
+	DISPLAY Use a front-facing car seat
+ELSE
+	DISPLAY Use a rear-facing car seat
+END IF
+
+

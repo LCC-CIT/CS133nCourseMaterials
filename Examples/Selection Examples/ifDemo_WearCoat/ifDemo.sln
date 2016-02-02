@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ifDemo", "ifDemo\ifDemo.csproj", "{865F2D9B-3406-482A-A09F-85F1B0F7E4F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{865F2D9B-3406-482A-A09F-85F1B0F7E4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865F2D9B-3406-482A-A09F-85F1B0F7E4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865F2D9B-3406-482A-A09F-85F1B0F7E4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865F2D9B-3406-482A-A09F-85F1B0F7E4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
