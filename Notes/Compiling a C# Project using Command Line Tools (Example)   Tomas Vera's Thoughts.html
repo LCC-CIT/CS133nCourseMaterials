@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="verify-v1" content="/sMZUb0GoxGQUTFVaevnQNbrFmhu3CxbRbd5Wt0EUqU=">
+<meta charset="UTF-8">
+<title>Compiling a C# Project using Command Line Tools (Example) | Tomas Vera's Thoughts</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="stylesheet" type="text/css" media="all" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/style.css">
+<link rel="pingback" href="http://www.tomasvera.com/thoughts/xmlrpc.php">
+
+<!-- BEGIN Metadata added by Add-Meta-Tags WordPress plugin -->
+<meta name="description" content="Compiling a C# (C-Sharp) file using command line tools is not as difficult as you may think. In this tutorial, I will walk you through the steps needed to create a project using nothing more than Notepad and the Command Prompt.">
+<!-- END Metadata added by Add-Meta-Tags WordPress plugin -->
+
+<link rel="alternate" type="application/rss+xml" title="Tomas Vera&#39;s Thoughts » Feed" href="http://www.tomasvera.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tomas Vera&#39;s Thoughts » Comments Feed" href="http://www.tomasvera.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Tomas Vera&#39;s Thoughts » Compiling a C# Project using Command Line Tools (Example) Comments Feed" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/feed/">
+<link rel="stylesheet" id="genericons-css" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/genericons.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/jetpack.css" type="text/css" media="all">
+<script async="" type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/ca-pub-5136789410437290.js"></script><script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/jquery.js"></script>
+<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/jquery-migrate.min.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.tomasvera.com/thoughts/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.tomasvera.com/thoughts/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.0.1">
+<link rel="canonical" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts.html">
+<link rel="shortlink" href="http://wp.me/P53KjH-6l">
+<style type="text/css">img#wpstats{display:none}</style><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #4c5f9a; }
+</style>
+<link type="text/css" rel="stylesheet" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/site-wide-6800426958._V1_.css"><style type="text/css">
+/* non-sprited */
+.ap_popover_unsprited .ap_body   .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_left_17._V248144977_.png); }
+.ap_popover_unsprited .ap_body   .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_right_17._V248144979_.png); }
+.ap_popover_unsprited .ap_header .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top_left._V265110087_.png); }
+.ap_popover_unsprited .ap_header .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top_right._V265110087_.png); }
+.ap_popover_unsprited .ap_header .ap_middle { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_top._V265110086_.png); }
+.ap_popover_unsprited .ap_footer .ap_left   { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom_left._V265110084_.png); }
+.ap_popover_unsprited .ap_footer .ap_right  { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom_right._V265110087_.png); }
+.ap_popover_unsprited .ap_footer .ap_middle { background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/po_bottom._V265110084_.png); }
+
+/* Everything else -- sprited */
+.ap_popover_sprited .ap_body .ap_left, 
+.ap_popover_sprited .ap_body .ap_right {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-v._V219326283_.png);
+}
+
+
+.ap_popover_sprited .ap_header .ap_left, 
+.ap_popover_sprited .ap_header .ap_right,
+.ap_popover_sprited .ap_header .ap_middle,
+.ap_popover_sprited .ap_footer .ap_left, 
+.ap_popover_sprited .ap_footer .ap_right,
+.ap_popover_sprited .ap_footer .ap_middle,
+.ap_popover_sprited .ap_closebutton {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-h._V219326280_.png);
+}
+
+.ap_popover_sprited .ap_body .ap_right-arrow, .ap_popover_sprited .ap_body .ap_left-arrow {
+    background-image: url(http://g-ecx.images-amazon.com/images/G/01/javascripts/lib/popover/images/light/sprite-arrow-v._V219326286_.png);
+}
+
+</style><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/services.css"></head>
+
+<body class="page page-id-393 page-child parent-pageid-16 page-template-default custom-background hasGoogleVoiceExt"><div id="ap_container"><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe><iframe frameborder="0" tabindex="-1" src="javascript:void(false)" style="display:none;position:absolute;z-index:0;filter:Alpha(Opacity=&#39;0&#39;);opacity:0;"></iframe></div>
+<div id="wrapper" class="hfeed">
+	<div id="header">
+		<div id="masthead">
+			<div id="branding" role="banner">
+								<div id="site-title">
+					<span>
+						<a href="http://www.tomasvera.com/" title="Tomas Vera&#39;s Thoughts" rel="home">Tomas Vera's Thoughts</a>
+					</span>
+				</div>
+				<div id="site-description">You know you want to know!</div>
+
+										<img src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/cropped-phraxis11600.jpg" width="940" height="198" alt="" scale="0">
+								</div><!-- #branding -->
+
+			<div id="access" role="navigation">
+			  				<div class="skip-link screen-reader-text"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#content" title="Skip to content">Skip to content</a></div>
+								<div class="menu"><ul><li><a href="http://www.tomasvera.com/">Home</a></li><li class="page_item page-item-22 page_item_has_children"><a href="http://www.tomasvera.com/a-summary-of-me/">A Summary of Me</a><ul class="children"><li class="page_item page-item-96"><a href="http://www.tomasvera.com/a-summary-of-me/la-familia-vera/">La Familia Vera</a></li><li class="page_item page-item-51"><a href="http://www.tomasvera.com/a-summary-of-me/tomas-vera-net-programmer/">Tomas Vera- Resume of a C#/.NET Programmer</a></li></ul></li><li class="page_item page-item-16 page_item_has_children current_page_ancestor current_page_parent"><a href="http://www.tomasvera.com/programming/">Programming</a><ul class="children"><li class="page_item page-item-460"><a href="http://www.tomasvera.com/programming/generating-hierarchical-nested-xml-from-a-dataset/">Generating Hierarchical (Nested) XML from a DataSet</a></li><li class="page_item page-item-393 current_page_item"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts.html">Compiling a C# Project using Command Line Tools (Example)</a></li><li class="page_item page-item-215"><a href="http://www.tomasvera.com/programming/using-javascriptserializer-to-parse-json-objects/">JavascriptSerializer Example – Parsing JSON</a></li><li class="page_item page-item-8"><a href="http://www.tomasvera.com/programming/godaddy-mysql-itextsharp-and-shared-hosting-woes/">GoDaddy, MySQL, iTextSharp and Shared Hosting Woes</a></li><li class="page_item page-item-82"><a href="http://www.tomasvera.com/programming/a-programmers-cheat-sheet-for-godaddy-com/">A Programmer’s Cheat-Sheet for GoDaddy.com</a></li><li class="page_item page-item-295"><a href="http://www.tomasvera.com/programming/compiling-itextsharp/">Compiling iTextSharp</a></li><li class="page_item page-item-165"><a href="http://www.tomasvera.com/programming/getting-request-variables-in-php/">Getting Request Variables in PHP</a></li></ul></li><li class="page_item page-item-56"><a href="http://www.tomasvera.com/contact-me/">Contact Me</a></li><li class="page_item page-item-2 page_item_has_children"><a href="http://www.tomasvera.com/about/">About</a><ul class="children"><li class="page_item page-item-518"><a href="http://www.tomasvera.com/about/buy-me-a-beer/">Buy me a Beer</a></li></ul></li></ul></div>
+			</div><!-- #access -->
+		</div><!-- #masthead -->
+	</div><!-- #header -->
+
+	<div id="main">
+
+		<div id="container">
+			<div id="content" role="main">
+
+
+				<div id="post-393" class="post-393 page type-page status-publish hentry">
+											<h1 class="entry-title">Compiling a C# Project using Command Line Tools (Example)</h1>
+					
+					<div class="entry-content">
+						<p>Compiling a C# (C-Sharp) file using command line tools is not as difficult as you may think. In this tutorial, I will walk you through the steps needed to create a project using nothing more than Notepad and the Command Prompt. <small><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#step1">Jump to the code</a></small></p>
+<p>A lot of programmers are not aware that the .NET compilers used by Visual Studio are installed as part of the .NET Framework itself. This allows you to use the C# and Visual Basic compilers outside of Visual Studio.</p>
+<p>“Why would you ever want to do this?” There may come a time when you need to craft a program but you are not at a computer with Visual Studio installed. Fear not, because your command line compiler is just a few keystrokes away courtesy of our friends at Microsoft.</p>
+<p>The command line compiler is a very powerful tool. You can build large complex Solutions from the command line just as easily as you can build a small “Hello World” program once you understand the basics concepts of compiling on the command line. So… let’s get started.</p>
+<p>First, open a Command Prompt window. to do this, you can click the Start button, select “Run” then enter “cmd” and click the “OK” button (the Command Prompt window can also be launched from the “Start” menu: Start | “All Programs” | Accessories| “Command Prompt”).</p>
+<p>For old-timers (such as myself) this is a bit like going back home. But for younger folks (those under 30) the command line can seem like something foreign. So I will use a bunch of screen captures to illustrate things as we go.</p>
+<p><strong><a name="step1"></a>Step 1:</strong> let’s create folder for us to work in.&nbsp; When I run the Command Prompt, on my system it starts in the c:\Windows\System32 folder. This is NOT GOOD. So let’s create a safe place to work.</p>
+<p>At the command prompt enter the following commands (each followed by &lt;ENTER&gt;):</p>
+<p><strong>cd %HOMEPATH% </strong>(Takes you to your Home folder)<strong><br>
+mkdir ccdemo</strong> (Creates a “ccdemo” folder in your Home folder)<strong><br>
+cd ccdemo</strong> (moves you into the folder we just created)<strong><br>
+</strong></p>
+<p>If all worked as expected your prompt should read something like “c:\Users\&lt;logon&gt;\ccdemo&gt;” (or the Windows XP equivalent). This is a “safe” folder. We are now ready to work.</p>
+<p><strong>Step 2:</strong> let’s find our compilers. We will use a search to locate all the available C# compilers (there may be more than one installed on your system). The compilers will be installed under the Windows folder which is represented by the “%WINDIR%” <a title="Envrionment Variable (MSDN)" href="http://msdn.microsoft.com/en-us/library/aa448431.aspx" target="_blank">environment variable</a>. Specifically, inside a folder named “Microsoft.NET”. So if you enter:</p>
+<p><strong>dir /s %WINDIR%\Microsoft.NET\CSC.EXE</strong></p>
+<p></p><div id="attachment_435" style="width: 559px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/csc_listing.png"><img class="size-full wp-image-435" title="csc_listing" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/csc_listing.png" alt="C# compilers available on your system" width="549" height="412" scale="0"></a><p class="wp-caption-text">Listing of C# compilers</p></div><p></p>
+<p style="text-align: center;">at the command prompt you will see a listing that looks a lot like this one:</p>
+<p>Here you can see that there are, in fact, three compilers available. We will use the .NET version 4 compiler for the rest of this article. Make note of the folder/path to the compiler of your choice. In my case it is: <strong>C:\Windows\Microsoft.NET\Framework\v4.0.30319\CSC.EXE</strong> . We will need this!</p>
+<p><strong>Step 3:</strong> let’s create a source file for us to compile. To do this we will use Notepad (installed on all Windows machines). From the command prompt enter the command:</p>
+<p><strong>Notepad.exe</strong></p>
+<p></p><div id="attachment_433" style="width: 680px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hello11.png"><img class="size-full wp-image-433" title="hello1" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hello11.png" alt="Hello.cs source code" width="670" height="395" scale="0"></a><p class="wp-caption-text">Source code used for the Hello program</p></div><p></p>
+<p style="text-align: center;">You should see the familiar Notepad window open up. Enter the following code and save it under the name <strong>hello.cs</strong> . (Here is a snapshot of the code in my text editor):</p>
+<p>Pretty simple! Notice that this “Hello World” program will print out the number of arguments specified on it’s own command line when called.</p>
+<p><strong>Step 4</strong>: Compile the source into an executable.<br>
+Enter the command:<br>
+<strong>C:\Windows\Microsoft.NET\Framework\v4.0.30319\CSC.EXE hello.cs</strong></p>
+<p>This will compile your source file and you will see a “hello.exe” in the folder. Next, run your newly compiled EXE and pass in some parameters.</p>
+<p></p><div id="attachment_429" style="width: 559px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/output11.png"><img class="size-full wp-image-429" title="output1" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/output11.png" alt="Output from running the Hello.EXE" width="549" height="415" scale="0"></a><p class="wp-caption-text">Output from running the Hello.EXE</p></div><p></p>
+<p style="text-align: center;">The output will look something like this:</p>
+<p>In this listing, you will also see how I called the program with some arguments so that you can see the argument count being displayed.</p>
+<p><strong>Step 5</strong>: OK. Now let us suppose that we have more than one class in our project. Let us also suppose that these classes are split over two (or more) .CS source files. Now what?<br>
+The command line arguments to CSC.EXE allow you to specify more than one source file. Simply specify all the source files you want to compile.</p>
+<p>Let’s modify our “hello.cs” file to call out to a second class “Goodbye” in a source file named “goodbye.cs”. Here are two source listings for a modified “hello.cs” and the source for a new file named “goodbye.cs”. Use Notepad to edit and save “hello.cs”. Then use Notepad to create “Goodbye.cs”. Notice that with this code, not only will see the count of arguments, but we will also see the arguments themselves, displayed.<br>
+(Hello2/Goodbye2 source Images HERE)</p>
+<p>Next, specify both files on the command line, such as:</p>
+<p><strong>C:\Windows\Microsoft.NET\Framework\v4.0.30319\CSC.EXE hello.cs goodbye.cs</strong></p>
+<p></p><div id="attachment_389" style="width: 679px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hello2.png"><img class="size-full wp-image-389" title="hello2" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hello2.png" alt="Source code for a small program that calls another class" width="669" height="479" scale="0"></a><p class="wp-caption-text">Updated Hello.cs source file</p></div><p></p>
+<p></p><div id="attachment_387" style="width: 679px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/goodbye2.png"><img class="size-full wp-image-387" title="goodbye2" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/goodbye2.png" alt="Source code for the Goodbye.cs demo file" width="669" height="632" scale="0"></a><p class="wp-caption-text">Source for the class to be called by the Updated Hello.cs</p></div><p></p>
+<p style="text-align: center;">Here’s a screen shot of this compilation along with some runs of the executable:</p>
+<p>As you can see, typing out the CSC command each time, along with a growing list of files can get to be a problem. So let’s start trimming things down a bit.</p>
+<p><strong>Step 6</strong>: Let’s simplify things. The first step in simplifying things is to call the CSC.EXE using a batch file (you could also use a command file, but I started using batch files, so that is what I will use here).</p>
+<p>Open Notepad and enter the following code. Save the file as “csc.bat”.</p>
+<p></p><div id="attachment_383" style="width: 759px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/csc_bat.png"><img class="size-full wp-image-383" title="csc_bat" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/csc_bat.png" alt="A batch file used to make command line compiling easier" width="749" height="258" scale="0"></a><p class="wp-caption-text">A batch file allows you to specify a much shorter command line</p></div><p></p>
+<p>A batch file is simply that: a “batch” of commands that will be executed in order. I won’t go into much detail on the contents of this file. If you are interested in this batch file, more information is provided here.</p>
+<p>Once you have this file, you can simply type “CSC” to launch the compiler. <em>Much easier</em>!</p>
+<p>So to compile the project, you would simply type</p>
+<p>CSC hello.cs goodbye.cs</p>
+<p>Using this batch file the output will look something like this:</p>
+<p></p><div id="attachment_384" style="width: 623px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/csc_bat_output.png"><img class="size-full wp-image-384" title="csc_bat_output" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/csc_bat_output.png" alt="Output from compiling using a batch file" width="613" height="331" scale="0"></a><p class="wp-caption-text">Using a batch file to launch the command line compiler makes for a very short command line.</p></div><p></p>
+<p>While we are simplifying things, let’s discuss Response files.</p>
+<p><strong>Step 7</strong>. Response files are used to set compiler options and directives, as well as to specify a set of source files to compile. The batch file that we used above can take up to 8 parameters. The command line compiler can take more parameters than this, and in some cases you may need to specify more many compiler options for your project. To handle this, you can create a Response file. A response file is parsed by the compiler and executes/implements options in the response file when it is compiling your project.</p>
+<p>To create a response file, open Notepad and enter the following four lines. Save the file as “hello.rsp”.</p>
+<p></p><div id="attachment_390" style="width: 463px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hello-rsp.png"><img class="size-full wp-image-390" title="hello-rsp" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/hello-rsp.png" alt="The response file used to simplify command line builds" width="453" height="275" scale="0"></a><p class="wp-caption-text">A response file allows you to specify a single parameter in your command line compile.</p></div><p></p>
+<p>Then at the command line, type:</p>
+<p><strong>CSC @hello.rsp</strong></p>
+<p>The output will look like:</p>
+<p></p><div id="attachment_382" style="width: 775px" class="wp-caption aligncenter"><a href="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/compile_resp.png"><img class="size-full wp-image-382" title="compile_resp" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/compile_resp.png" alt="Compiling using a Response file" width="765" height="439" scale="0"></a><p class="wp-caption-text">A response file makes compiling easier</p></div><p></p>
+<h3>Summary</h3>
+<p>So there you have it. You have just created a framework for allowing you to compile a set of source files using tools available on any Windows computer. The best part: these tools are available for FREE (which is always a good thing).</p>
+<p>As always, if you have any questions, feel free to comment or <a title="Contact Me" href="http://www.tomasvera.com/contact-me/" target="_self">Contact Me</a>.</p>
+<h3>References/ Additional Reading</h3>
+<p>Here are some references that discuss all the options for the following:</p>
+<p><a title="Command-line Building with csc.exe" href="http://msdn.microsoft.com/en-us/library/78f4aasd.aspx" target="_blank">Command-line Building With csc.exe</a>(MSDN)</p>
+<p><a title="C# Response files" href="http://msdn.microsoft.com/en-us/library/8a1fs1tb%28v=VS.71%29.aspx" target="_blank">C# Compiler Options Listed by Category (MSDN)<br>
+</a></p>
+<p><a title="C# Response files" href="http://msdn.microsoft.com/en-us/library/8a1fs1tb%28v=VS.71%29.aspx" target="_blank">@ (Specify Response File)</a> (MSDN, but not a good resource. I may need to write a tutorial on this)</p>
+<p>All the source files for this project:<a href="http://www.tomasvera.com/thoughts/wp-content/uploads/2012/08/csc.zip"> csc</a></p>
+<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-email"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon no-text" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?share=email" target="_blank" title="Click to email this to a friend"><span></span><span class="sharing-screen-reader-text">Click to email this to a friend (Opens in new window)</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-393" class="share-facebook sd-button share-icon no-text" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?share=facebook" target="_blank" title="Share on Facebook"><span></span><span class="sharing-screen-reader-text">Share on Facebook (Opens in new window)</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-393" class="share-twitter sd-button share-icon no-text" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?share=twitter" target="_blank" title="Click to share on Twitter"><span></span><span class="sharing-screen-reader-text">Click to share on Twitter (Opens in new window)</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon no-text" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?share=tumblr" target="_blank" title="Click to share on Tumblr"><span></span><span class="sharing-screen-reader-text">Click to share on Tumblr (Opens in new window)</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon no-text" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?share=reddit" target="_blank" title="Click to share on Reddit"><span></span><span class="sharing-screen-reader-text">Click to share on Reddit (Opens in new window)</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-393" class="share-linkedin sd-button share-icon no-text" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?share=linkedin" target="_blank" title="Click to share on LinkedIn"><span></span><span class="sharing-screen-reader-text">Click to share on LinkedIn (Opens in new window)</span></a></li><li class="share-end"></li></ul></div></div></div>																	</div><!-- .entry-content -->
+				</div><!-- #post-## -->
+<iframe src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/like.html" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowtransparency="true"></iframe>
+				
+			<div id="comments">
+
+
+			<h3 id="comments-title">27 Responses to <em>Compiling a C# Project using Command Line Tools (Example)</em></h3>
+
+
+			<ol class="commentlist">
+					<li class="comment even thread-even depth-1" id="li-comment-48394">
+		<div id="comment-48394">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8ee2828527bf375db4bb884740a89431" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8ee2828527bf375db4bb884740a89431?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Sbonelo</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-48394">
+			January 2, 2015 at 00:00</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>When i try to compile the hello.cs file i get the errors</p>
+<p>hello.cs(13,13): error CS0246: The type or namespace name ‘Echo’ could not be<br>
+        found (are you missing a using directive or an assembly reference?)<br>
+hello.cs(13,36): error CS0246: The type or namespace name ‘Echo’ could not be<br>
+        found (are you missing a using directive or an assembly reference?)</p>
+<p>And with the goodbye.cs file i get </p>
+<p>error CS5001: Program ‘c:\Users\sbonelo.ndlela\Documents\csc\goodbye.exe’ does<br>
+        not contain a static ‘Main’ method suitable for an entry point</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=48394#respond" onclick="return addComment.moveForm(&quot;comment-48394&quot;, &quot;48394&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-48028">
+		<div id="comment-48028">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8ee2828527bf375db4bb884740a89431" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8ee2828527bf375db4bb884740a89431?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Sbonelo</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-48028">
+			December 31, 2014 at 05:28</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Thank you, this was most usefull.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=48028#respond" onclick="return addComment.moveForm(&quot;comment-48028&quot;, &quot;48028&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-24200">
+		<div id="comment-24200">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/b77ea5cc0bd75257a40b0f7c775fd6b2" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/b77ea5cc0bd75257a40b0f7c775fd6b2?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">ashish</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-24200">
+			August 18, 2014 at 09:46</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Finally I got one which is working…….. <img src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/icon_smile.gif" alt=":-)" class="wp-smiley" scale="0"></p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=24200#respond" onclick="return addComment.moveForm(&quot;comment-24200&quot;, &quot;24200&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-21721">
+		<div id="comment-21721">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/3cb3737a54bed172de3688dc423a5b44" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/3cb3737a54bed172de3688dc423a5b44?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Cute</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21721">
+			March 23, 2014 at 07:19</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>thankxxxx tomas…great job!<br>
+ i m done with it <img src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/icon_razz.gif" alt=":P" class="wp-smiley" scale="0"></p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21721#respond" onclick="return addComment.moveForm(&quot;comment-21721&quot;, &quot;21721&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-21692">
+		<div id="comment-21692">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/3cb3737a54bed172de3688dc423a5b44" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/3cb3737a54bed172de3688dc423a5b44?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Cute</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21692">
+			March 23, 2014 at 00:14</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>hello,<br>
+My system shows this error when i type this command C:\Windows\Microsoft.NET\Framework\v4.0.30319\CSC.EXE hello.cs</p>
+<p>Microsoft  visual c# 2010  Compiler version 4.0,30319.1<br>
+Copy Right  Microsoft Corporation.All rights reserved</p>
+<p>error CS2001:source file ‘hello.cs’ could not be found<br>
+fatal error  CS2008:No inputs specified</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21692#respond" onclick="return addComment.moveForm(&quot;comment-21692&quot;, &quot;21692&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-21720">
+		<div id="comment-21720">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21720">
+			March 23, 2014 at 07:13</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Please see my reply to a visitor named Hammad in this thread.</p>
+<p>Thank you for visting!</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21720#respond" onclick="return addComment.moveForm(&quot;comment-21720&quot;, &quot;21720&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-21566">
+		<div id="comment-21566">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/448ea2f37bd94f5140ee0fbab7c16fad" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/448ea2f37bd94f5140ee0fbab7c16fad?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Rose</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21566">
+			March 21, 2014 at 14:20</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Thank you… It’s Working… <img src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/icon_smile.gif" alt=":)" class="wp-smiley" scale="0"></p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21566#respond" onclick="return addComment.moveForm(&quot;comment-21566&quot;, &quot;21566&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-21718">
+		<div id="comment-21718">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21718">
+			March 23, 2014 at 07:06</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Thank you!! You’ve made my day!</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21718#respond" onclick="return addComment.moveForm(&quot;comment-21718&quot;, &quot;21718&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://petersnotebook.wordpress.com/2014/03/18/compiling-c-at-command-line/" rel="external nofollow" class="url">Compiling C# at Command Line | petersnotebook</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-15256">
+		<div id="comment-15256">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/9110bc4dec67f7c66b0dc0b02a800d1b" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/9110bc4dec67f7c66b0dc0b02a800d1b?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Slavi</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-15256">
+			November 16, 2013 at 13:54</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Hi, i save the file hello.cs but when i try to compile , have a message source file hello.cs could not be found.Can you tell me why ?</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=15256#respond" onclick="return addComment.moveForm(&quot;comment-15256&quot;, &quot;15256&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-15292">
+		<div id="comment-15292">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-15292">
+			November 17, 2013 at 11:22</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>You must ensure that you are either<br>
+1) in the directory to which you saved file “hello.cs”, or<br>
+2) you must provide a fully qualified path to the file “hello.cs”</p>
+<p>The message indicates that CSC can not find file “hello.cs”</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=15292#respond" onclick="return addComment.moveForm(&quot;comment-15292&quot;, &quot;15292&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment even depth-3" id="li-comment-21688">
+		<div id="comment-21688">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/3cb3737a54bed172de3688dc423a5b44" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/3cb3737a54bed172de3688dc423a5b44?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">hammad</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21688">
+			March 22, 2014 at 23:33</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Hi, i save the file hello.cs but when i try to compile , have a message source file hello.cs could not be found.Can you tell me the path where to place hello.cs file in which folder?</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21688#respond" onclick="return addComment.moveForm(&quot;comment-21688&quot;, &quot;21688&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-4" id="li-comment-21719">
+		<div id="comment-21719">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-21719">
+			March 23, 2014 at 07:12</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Ensure that your current directory is the one from which you are typing in the command.<br>
+For example: If you save “hello.cs” as “c:\classroom_assignment\hello.cc”, then you must ensure that you are in folder “c:\classroom_assignment” when you execute the command.</p>
+<p>Alternatively, you could enter:<br>
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\CSC.EXE c:\classroom_assignment\hello.cs</p>
+<p>from the DOS prompt in any folder and it will work (be sure to escape any filename with spaces in them). </p>
+<p>Contact me if you still have questions.</p>
+<p>P.S. By any chance are you at Barani?</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=21719#respond" onclick="return addComment.moveForm(&quot;comment-21719&quot;, &quot;21719&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment even depth-5" id="li-comment-30267">
+		<div id="comment-30267">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/69d08c2dd1dcab2303c8e0947c492b60" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/69d08c2dd1dcab2303c8e0947c492b60?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">theo</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-30267">
+			October 29, 2014 at 14:19</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>hi! i did what you said, but unfortunately, this error appears in the command prompt now:<br>
+error CS1567: error generating Win32 resource: Access denied.<br>
+and a warning<br>
+CS1610: unable to delete temporary file.</p>
+<p>could anyone give me some help, pretty please?</p>
+</div>
+
+		<div class="reply">
+					</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-5" id="li-comment-30271">
+		<div id="comment-30271">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-30271">
+			October 29, 2014 at 14:45</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Thanks for stopping by my site!</p>
+<p>Entering that error message into Google takes me straight to MSDN. MSDN is the best resource for compiler errors.</p>
+<p>Here are two links that give some info on the error messages. I hope they help.</p>
+<p>For error 1567:  <a href="http://msdn.microsoft.com/en-us/library/h3a82eh8.aspx" rel="nofollow">http://msdn.microsoft.com/en-us/library/h3a82eh8.aspx</a></p>
+<p>For error 1610: <a href="http://msdn.microsoft.com/en-us/library/z4aytccf.aspx" rel="nofollow">http://msdn.microsoft.com/en-us/library/z4aytccf.aspx</a></p>
+</div>
+
+		<div class="reply">
+					</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-11287">
+		<div id="comment-11287">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/5d2d6b8bd32102d3584c16de525d4ad5" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/5d2d6b8bd32102d3584c16de525d4ad5?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">jnanadeep</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-11287">
+			June 16, 2013 at 11:48</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>can any one plz tell me </p>
+<p>when i type notepad.cs in cmd it shows d message:’notepad.cs’is not recognized as an internal or external command..</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=11287#respond" onclick="return addComment.moveForm(&quot;comment-11287&quot;, &quot;11287&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-11297">
+		<div id="comment-11297">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-11297">
+			June 16, 2013 at 13:53</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>You are supposed to type “notepad.exe” . Or just “notepad”.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=11297#respond" onclick="return addComment.moveForm(&quot;comment-11297&quot;, &quot;11297&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-11007">
+		<div id="comment-11007">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/efddc2de0f3e40b8e541e0ff11327ccb" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/efddc2de0f3e40b8e541e0ff11327ccb?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Marilyn</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-11007">
+			June 10, 2013 at 15:00</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Tomas, Hi my computer is saying that my visualc#compiler has stopped working is this something I need to have fixed or is this just a bonus that comes with the software?????  I dont use it for business just for personel use job searching and such.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=11007#respond" onclick="return addComment.moveForm(&quot;comment-11007&quot;, &quot;11007&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-11013">
+		<div id="comment-11013">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-11013">
+			June 10, 2013 at 17:43</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Marilyn, Unfortunately, troubleshooting an error such as this could involve reviewing logs (among other things) to try and identify the actual cause of the error. It likely not the C# compiler itself that is bad. But rather something that is trying to use the C# compiler that is having trouble.</p>
+<p>Here is one of many possible trouble shooting  scenarios. <a href="http://answers.microsoft.com/en-us/windows/forum/windows_7-windows_programs/my-visual-c-command-line-compiler-has-stopped/19f54de9-98aa-469e-859c-b5a5f4d6f268" rel="nofollow">LINK</a></p>
+<p>Sorry I could not be of more help.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=11013#respond" onclick="return addComment.moveForm(&quot;comment-11013&quot;, &quot;11013&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-8923">
+		<div id="comment-8923">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/39915a5046e891ed50a8c6cce2f7187d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/39915a5046e891ed50a8c6cce2f7187d?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">rokon</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-8923">
+			March 19, 2013 at 09:49</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>What about debugging the c# code in this environment?</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=8923#respond" onclick="return addComment.moveForm(&quot;comment-8923&quot;, &quot;8923&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-8925">
+		<div id="comment-8925">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-8925">
+			March 19, 2013 at 13:03</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Debugging can be difficult in this environment.</p>
+<p>Since, I am assuming that you don’t have an IDE and you are coding in a difficult situation, the old fashioned “Console.Write(…)” or “MessageBox.Show(…)” are your best friends if really need to debug. But if you really want to do true debugging, you have some options.</p>
+<p>First, you will want to generate debugging information. To generate this information you would need to add an option to your command line “/debug”. You can add it directly to a command line, or include it in a response file (discussed in the article, above).</p>
+<p>Next you will need a debugger of some sort. I have not used anything other than the VS IDE recently. But I have used other debuggers in the past and I’m sure that you can find a good debugger available for download somewhere.</p>
+<p>So bottom line: debugging will be hard, but not impossible. Let me know if this is a topic that you believe I should cover in some detail.</p>
+<p>-tomas</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=8925#respond" onclick="return addComment.moveForm(&quot;comment-8925&quot;, &quot;8925&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://blog.krux.fr/2013/02/14/compiling-a-c-project-using-command-line-tools-tutorial-tomas-veras-thoughts/" rel="external nofollow" class="url">Compiling a C# Project using Command Line Tools (Tutorial) | Tomas Vera’s Thoughts | Le blog de Krux</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1" id="li-comment-7959">
+		<div id="comment-7959">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/51349ac55d2bb65a7aff3c7c2b4de2d4" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://1.gravatar.com/avatar/51349ac55d2bb65a7aff3c7c2b4de2d4?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">alula</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-7959">
+			January 28, 2013 at 21:22</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>thank you to you<br>
+but a command line environment is difficult for newbie<br>
+i think that we should use a visual studio ide is the best.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=7959#respond" onclick="return addComment.moveForm(&quot;comment-7959&quot;, &quot;7959&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-7982">
+		<div id="comment-7982">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-7982">
+			January 29, 2013 at 09:22</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Yes, IDE is easier. As I mentioned this is most useful for situations where you do not have the IDE and you need to write some code without the tools.</p>
+<p>Even though most people do not use the command line often, a professional should have knowledge of the command line tools in DOS, Unix/Linux, etc.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=7982#respond" onclick="return addComment.moveForm(&quot;comment-7982&quot;, &quot;7982&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment even thread-odd thread-alt depth-1" id="li-comment-6738">
+		<div id="comment-6738">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/c3af52f3b8f547d761efc38c973d6caf" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/c3af52f3b8f547d761efc38c973d6caf?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">Joshua Campbell</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-6738">
+			December 9, 2012 at 14:28</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>Thank you.</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=6738#respond" onclick="return addComment.moveForm(&quot;comment-6738&quot;, &quot;6738&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-admin bypostauthor odd alt depth-2" id="li-comment-6742">
+		<div id="comment-6742">
+		<div class="comment-author vcard">
+			<img alt="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/8f168af0c4ff9e282ced3a6ddeaabe9d" class="avatar avatar-40 photo" height="40" width="40" originals="40" src-orig="http://0.gravatar.com/avatar/8f168af0c4ff9e282ced3a6ddeaabe9d?s=40&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G" scale="1.5">			<cite class="fn">-tomas</cite> <span class="says">says:</span>		</div><!-- .comment-author .vcard -->
+		
+		<div class="comment-meta commentmetadata"><a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-6742">
+			December 9, 2012 at 18:45</a>		</div><!-- .comment-meta .commentmetadata -->
+
+		<div class="comment-body"><p>I’m glad you found this useful!</p>
+<p>-tomas</p>
+</div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/?replytocom=6742#respond" onclick="return addComment.moveForm(&quot;comment-6742&quot;, &quot;6742&quot;, &quot;respond&quot;, &quot;393&quot;)">Reply</a>		</div><!-- .reply -->
+	</div><!-- #comment-##  -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://www.tomasvera.com/2012/08/compiling-c-code-from-the-command-line/" rel="external nofollow" class="url">Compiling C# Code from the Command Line (Updated) | Tomas Vera's Thoughts</a></p>
+	</li><!-- #comment-## -->
+			</ol>
+
+
+
+								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://www.tomasvera.com/thoughts/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" aria-required="true"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" value="" size="30"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; &lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" type="submit" id="submit" value="Post Comment">
+							<input type="hidden" name="comment_post_ID" value="393" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+						</p>
+						<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c84f92593d"></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p><p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1420253115745"></form>
+							</div><!-- #respond -->
+			
+</div><!-- #comments -->
+
+
+			</div><!-- #content -->
+		</div><!-- #container -->
+
+
+		<div id="primary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li id="beer" class="widget-container">
+				<h3 class="widget-title">Do you find this helpful?</h3>
+				<a href="http://www.tomasvera.com/about/buy-me-a-beer/">Buy me a beer!</a>
+
+			</li>
+			<li>
+				<div id="noads" style="display:none;width:200px;margin:10px 0;color:#000;font-weight:700;">Please disable your adblocker to help support this site!</div>
+			</li>
+
+<li id="search-2" class="widget-container widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://www.tomasvera.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input type="text" value="" name="s" id="s">
+					<input type="submit" id="searchsubmit" value="Search">
+				</div>
+			</form></li>		<li id="recent-posts-2" class="widget-container widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://www.tomasvera.com/2014/12/do-it-by-hand-enondaradial-com/">Do it by hand – EnOndaRadial.com</a>
+						</li>
+					<li>
+				<a href="http://www.tomasvera.com/2014/11/google-mapping-api-markers-polygons-points-oh-my/">Google Mapping API – Markers, Polygons, Points, Oh My!</a>
+						</li>
+					<li>
+				<a href="http://www.tomasvera.com/2014/11/example-vs-tutorial-seo-magic/">Example vs. Tutorial – SEO Magic</a>
+						</li>
+					<li>
+				<a href="http://www.tomasvera.com/2014/10/seo-magic/">SEO Magic</a>
+						</li>
+					<li>
+				<a href="http://www.tomasvera.com/2014/10/sed-only-took-me-twenty-years/">sed – only took me twenty years</a>
+						</li>
+				</ul>
+		</li><li id="recent-comments-2" class="widget-container widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link">Sbonelo</span> on <a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-48394">Compiling a C# Project using Command Line Tools (Example)</a></li><li class="recentcomments"><span class="comment-author-link">Sbonelo</span> on <a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#comment-48028">Compiling a C# Project using Command Line Tools (Example)</a></li><li class="recentcomments"><span class="comment-author-link">-tomas</span> on <a href="http://www.tomasvera.com/programming/generating-hierarchical-nested-xml-from-a-dataset/#comment-47957">Generating Hierarchical (Nested) XML from a DataSet</a></li><li class="recentcomments"><span class="comment-author-link">Larry Young</span> on <a href="http://www.tomasvera.com/programming/generating-hierarchical-nested-xml-from-a-dataset/#comment-47956">Generating Hierarchical (Nested) XML from a DataSet</a></li><li class="recentcomments"><span class="comment-author-link"><a href="http://seo9.ir/" rel="external nofollow" class="url">سئو</a></span> on <a href="http://www.tomasvera.com/2014/11/example-vs-tutorial-seo-magic/#comment-47638">Example vs. Tutorial – SEO Magic</a></li></ul></li><li id="categories-2" class="widget-container widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+	<li class="cat-item cat-item-47"><a href="http://www.tomasvera.com/category/blog/">Blog</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.tomasvera.com/category/internet/">Internet</a>
+</li>
+	<li class="cat-item cat-item-48"><a href="http://www.tomasvera.com/category/linux/">linux</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.tomasvera.com/category/movies/">Movies</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.tomasvera.com/category/programming/" title="This is a category for encompassing all things related to programming">Programming</a>
+</li>
+	<li class="cat-item cat-item-42"><a href="http://www.tomasvera.com/category/internet/seo/">SEO</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.tomasvera.com/category/uncategorized/">Uncategorized</a>
+</li>
+		</ul>
+</li>You might like...<script type="text/javascript"><!--
+             amazon_ad_width = "180"; amazon_ad_height = "150"; amazon_ad_logo = "show"; amazon_ad_border = "show"; amazon_ad_product_images = "show"; amazon_ad_link_target = "new"; amazon_ad_price = "all"; amazon_ad_discount = "add"; amazon_color_border = "#000000"; amazon_color_text = "#4C5F9A"; amazon_color_background = "#4C5F9A"; amazon_color_link = "#3399FF"; amazon_color_price = "#990000"; amazon_color_logo = "#CC6600"; amazon_ad_tag = "dadkindsboilerro";
+            //--></script><script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/ads.js"></script><script src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/ads-common.js" type="text/javascript"></script><iframe src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/cm.html" marginwidth="0" marginheight="0" width="180" height="150" border="0" frameborder="0" style="border:none;" scrolling="no"></iframe>			</ul>
+		</div><!-- #primary .widget-area -->
+
+<div style="text-align:center">
+<script async="" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/adsbygoogle.js"></script>
+<!-- sm_sq_right_panel -->
+<ins class="adsbygoogle" style="display:inline-block;width:200px;height:200px" data-ad-client="ca-pub-5136789410437290" data-ad-slot="7283887054" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:200px;margin:0;padding:0;position:relative;visibility:visible;width:200px;background-color:transparent"><iframe width="200" height="200" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+		<div id="secondary" class="widget-area" role="complementary">
+			<ul class="xoxo">
+				<li id="archives-3" class="widget-container widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+	<li><a href="http://www.tomasvera.com/2014/12/">December 2014</a></li>
+	<li><a href="http://www.tomasvera.com/2014/11/">November 2014</a></li>
+	<li><a href="http://www.tomasvera.com/2014/10/">October 2014</a></li>
+	<li><a href="http://www.tomasvera.com/2014/09/">September 2014</a></li>
+	<li><a href="http://www.tomasvera.com/2014/08/">August 2014</a></li>
+	<li><a href="http://www.tomasvera.com/2014/07/">July 2014</a></li>
+	<li><a href="http://www.tomasvera.com/2013/08/">August 2013</a></li>
+	<li><a href="http://www.tomasvera.com/2013/02/">February 2013</a></li>
+	<li><a href="http://www.tomasvera.com/2012/11/">November 2012</a></li>
+	<li><a href="http://www.tomasvera.com/2012/08/">August 2012</a></li>
+	<li><a href="http://www.tomasvera.com/2012/07/">July 2012</a></li>
+	<li><a href="http://www.tomasvera.com/2012/05/">May 2012</a></li>
+	<li><a href="http://www.tomasvera.com/2012/03/">March 2012</a></li>
+	<li><a href="http://www.tomasvera.com/2012/01/">January 2012</a></li>
+	<li><a href="http://www.tomasvera.com/2011/11/">November 2011</a></li>
+	<li><a href="http://www.tomasvera.com/2011/08/">August 2011</a></li>
+	<li><a href="http://www.tomasvera.com/2011/05/">May 2011</a></li>
+	<li><a href="http://www.tomasvera.com/2011/04/">April 2011</a></li>
+	<li><a href="http://www.tomasvera.com/2011/03/">March 2011</a></li>
+	<li><a href="http://www.tomasvera.com/2011/01/">January 2011</a></li>
+	<li><a href="http://www.tomasvera.com/2010/12/">December 2010</a></li>
+	<li><a href="http://www.tomasvera.com/2010/11/">November 2010</a></li>
+		</ul>
+</li><li id="meta-2" class="widget-container widget_meta"><h3 class="widget-title">Meta</h3>			<ul>
+						<li><a href="http://www.tomasvera.com/thoughts/wp-login.php">Log in</a></li>
+			<li><a href="http://www.tomasvera.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://www.tomasvera.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+</li>			</ul>
+                        <div>Like what you see?<br>
+                           <a href="http://www.tomasvera.com/about/buy-me-a-beer/"><span style="font-weight:bold;">Buy me a beer!</span></a>
+                        </div>
+
+		</div><!-- #secondary .widget-area -->
+
+
+<script>
+(function() {
+    var message = "<div style='display:block'>We've detected that you have an ad blocker enabled! Please enable it and help support our work!</div>";
+
+        // Define a function for showing the message.
+        // Set a timeout of 2 seconds to give adblocker
+        // a chance to do its thing
+        var tryMessage = function() {
+            setTimeout(function() {
+                if(!document.getElementsByClassName) return;
+                var ads = document.getElementsByClassName('adsbygoogle'),
+                    ad  = ads[ads.length - 1];
+
+                if(!ad
+                    || ad.innerHTML.length == 0
+                    || ad.clientHeight === 0) {
+			document.getElementById('noads').style.display="inline-block";
+			//ad.innerHTML= message;
+                    //alert(message);
+                    //window.location.href = '[URL of the donate page. Remove the two slashes at the start of thsi line to enable.]';
+                } else {
+                    //ad.style.display = 'none';
+                }
+
+            }, 2000);
+        }
+
+        /* Attach a listener for page load ... then show the message */
+        if(window.addEventListener) {
+            window.addEventListener('load', tryMessage, false);
+        } else {
+            window.attachEvent('onload', tryMessage); //IE
+        }
+})();
+</script>
+	</div><!-- #main -->
+
+	<div id="footer" role="contentinfo">
+		<div id="colophon">
+
+
+
+			<div id="site-info">
+				<a href="http://www.tomasvera.com/" title="Tomas Vera&#39;s Thoughts" rel="home">
+					Tomas Vera's Thoughts				</a>
+			</div><!-- #site-info -->
+
+			<div id="site-generator">
+								<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform" rel="generator">
+					Proudly powered by WordPress.				</a>
+			</div><!-- #site-generator -->
+
+		</div><!-- #colophon -->
+	</div><!-- #footer -->
+
+</div><!-- #wrapper -->
+
+
+
+
+	<div style="display:none">
+	<div class="grofile-hash-map-8ee2828527bf375db4bb884740a89431">
+	</div>
+	<div class="grofile-hash-map-b77ea5cc0bd75257a40b0f7c775fd6b2">
+	</div>
+	<div class="grofile-hash-map-3cb3737a54bed172de3688dc423a5b44">
+	</div>
+	<div class="grofile-hash-map-8f168af0c4ff9e282ced3a6ddeaabe9d">
+	</div>
+	<div class="grofile-hash-map-448ea2f37bd94f5140ee0fbab7c16fad">
+	</div>
+	<div class="grofile-hash-map-9110bc4dec67f7c66b0dc0b02a800d1b">
+	</div>
+	<div class="grofile-hash-map-69d08c2dd1dcab2303c8e0947c492b60">
+	</div>
+	<div class="grofile-hash-map-5d2d6b8bd32102d3584c16de525d4ad5">
+	</div>
+	<div class="grofile-hash-map-efddc2de0f3e40b8e541e0ff11327ccb">
+	</div>
+	<div class="grofile-hash-map-39915a5046e891ed50a8c6cce2f7187d">
+	</div>
+	<div class="grofile-hash-map-51349ac55d2bb65a7aff3c7c2b4de2d4">
+	</div>
+	<div class="grofile-hash-map-c3af52f3b8f547d761efc38c973d6caf">
+	</div>
+	</div>
+<script type="text/javascript">var dom = {};dom.query = jQuery.noConflict(true);</script><script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/link-enhancer"></script><script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/bootstrap.html" charset="utf-8"></script><script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/site-wide-5809221203._V1_.js"></script><script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/assoc_pp-1912654784._V1_.js"></script><noscript>&lt;img src="http://www.assoc-amazon.com/s/noscript?tag=dadkindsboilerro" alt="" /&gt;</noscript><script type="text/javascript">$=dom.query;</script>
+	<script type="text/javascript">
+		WPCOM_sharing_counts = {"http:\/\/www.tomasvera.com\/programming\/compiling-a-c-project-using-command-line-tools-tutorial\/":393}	</script>
+	<div id="sharing_email" style="display: none;">
+		<form action="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts.html" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+			
+			
+			<img style="float: right; display: none" class="loading" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/loading.gif" alt="loading" width="16" height="16" scale="0">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a href="http://www.tomasvera.com/programming/compiling-a-c-project-using-command-line-tools-tutorial/#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-tumblr' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/form.js"></script>
+<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/wpgroho.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/sharing.js"></script>
+
+	<script src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/e-201501.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:3.3',blog:'74774709',post:'393',tz:'-7'});
+	var load_cmc = function(){linktracker_init(74774709,393,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script><img id="wpstats" src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/g.gif" alt="" scale="0"><script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Compiling a C# Project using Command Line Tools (Example)   Tomas Vera's Thoughts_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3352343-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+
+
+</body></html>
